@@ -7,7 +7,7 @@ const HomePage = () => {
             <header className="bg-gray-800 px-8 py-6 text-white">
                 <div className="mb-6">
                     <h1 className="text-4xl font-bold mb-2">Trash vote</h1>
-                    <h2 className="text-lg text-gray-300">maakt afval weggooien leuk</h2>
+                    <h2 className="text-lg text-gray-300">Maakt afval weggooien leuk</h2>
                 </div>
                 <nav>
                     <ul className="flex justify-between space-x-8">
@@ -21,7 +21,7 @@ const HomePage = () => {
             <main className="flex-grow bg-white p-8">
                 <section className="mb-8">
                     <h2 className="text-2xl font-semibold">Onze Missie</h2>
-                    <p>afval weggooien leuk maken!</p>
+                    <p>Afval weggooien leuk maken!</p>
                 </section>
                 <section>
                     <h2 className="text-2xl font-semibold">Nieuws</h2>
