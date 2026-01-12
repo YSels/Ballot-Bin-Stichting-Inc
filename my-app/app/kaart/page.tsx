@@ -1,14 +1,19 @@
 import React from 'react';
+import Image from 'next/image';
 import '../globals.css';
+import MapComponent from '../components/MapComponent';
 
 const KaartPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-extrabold">Trash vote</h1>
-            <p className="text-sm text-gray-500">Maakt afval weggooien leuk</p>
+          <div className="flex items-center gap-3">
+            <Image src="/logo.Bin.png" alt="Trash vote logo" width={40} height={40} />
+            <div>
+              <h1 className="text-2xl font-extrabold">Trash vote</h1>
+              <p className="text-sm text-gray-500">Maakt afval weggooien leuk</p>
+            </div>
           </div>
           <nav aria-label="primary" className="hidden sm:block">
             <ul className="flex gap-6 text-sm">
@@ -25,36 +30,25 @@ const KaartPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <aside className="lg:col-span-1">
             <div className="bg-white p-5 rounded-lg shadow-sm">
-              <h2 className="text-lg font-semibold mb-3">Filters</h2>
+              <h2 className="text-lg font-semibold mb-3">Balllot Bins:</h2>
               <div className="space-y-3">
-                <label className="flex items-center gap-2">
-                  <input type="checkbox" className="form-checkbox h-4 w-4 text-indigo-600" />
-                  <span className="text-sm">Restafval</span>
-                </label>
-                <label className="flex items-center gap-2">
-                  <input type="checkbox" className="form-checkbox h-4 w-4 text-indigo-600" />
-                  <span className="text-sm">Plastic</span>
-                </label>
-                <label className="flex items-center gap-2">
-                  <input type="checkbox" className="form-checkbox h-4 w-4 text-indigo-600" />
-                  <span className="text-sm">Glas</span>
-                </label>
+                
               </div>
 
               <div className="mt-6">
-                <h3 className="text-sm text-gray-500">Locaties in de buurt</h3>
+                <h3 className="text-sm text-gray-500"></h3>
                 <ul className="mt-3 space-y-3">
                   <li className="p-3 bg-gray-50 rounded-md flex items-start justify-between">
                     <div>
                       <div className="font-medium">Prullenbak A</div>
-                      <div className="text-xs text-gray-500">200m - Plastic</div>
+                      <div className="text-xs text-gray-500">200m</div>
                     </div>
                     <button className="text-indigo-600 text-sm">Bekijk</button>
                   </li>
                   <li className="p-3 bg-gray-50 rounded-md flex items-start justify-between">
                     <div>
                       <div className="font-medium">Afvalpunt B</div>
-                      <div className="text-xs text-gray-500">350m - Glas</div>
+                      <div className="text-xs text-gray-500">350m</div>
                     </div>
                     <button className="text-indigo-600 text-sm">Bekijk</button>
                   </li>
@@ -65,9 +59,7 @@ const KaartPage = () => {
 
           <section className="lg:col-span-2 space-y-6">
             <div className="bg-white rounded-lg shadow-sm overflow-hidden h-[60vh]">
-              <div className="w-full h-full bg-gradient-to-br from-indigo-50 to-white flex items-center justify-center text-gray-400">
-                Kaartplaceholder — plaats hier je interactieve kaart (Leaflet/Mapbox/Google Maps)
-              </div>
+              <MapComponent />
             </div>
 
             <div className="bg-white p-5 rounded-lg shadow-sm">
