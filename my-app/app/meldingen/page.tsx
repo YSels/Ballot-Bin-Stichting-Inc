@@ -8,7 +8,7 @@ const MeldingenPage = () => {
                 <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
                     <div>
                         <h1 className="text-2xl font-extrabold">Trash vote</h1>
-                        <p className="text-sm text-gray-500">maakt afval weggooien leuk</p>
+                        <p className="text-sm text-gray-500">Maakt afval weggooien leuk</p>
                     </div>
                     <nav aria-label="primary" className="hidden sm:block">
                         <ul className="flex gap-6 text-sm">
