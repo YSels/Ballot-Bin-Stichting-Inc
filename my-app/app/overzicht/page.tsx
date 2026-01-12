@@ -1,8 +1,27 @@
 import React from 'react';
 import Image from 'next/image';
 import '../globals.css';
+import OverzichtClient from './OverzichtClient';
+
+type Stat = { title: string; value: string; badge?: string };
+type Card = { title: string; location: string; question: string; options: [string, number][]; capacity: number };
 
 const OverzichtPage = () => {
+    const stats: Stat[] = [
+        { title: 'Totaal Ballot Bins', value: '5' },
+        { title: 'Actief', value: '3', badge: 'success' },
+        { title: 'Vol - Aandacht Nodig', value: '2', badge: 'alert' },
+        { title: 'Totaal Stemmen', value: '1.896' },
+    ];
+
+    const cards: Card[] = [
+        { title: 'Centraal Station', location: 'Stationsplein 1, Amsterdam', question: 'Wat is de beste koffie?', options: [['Cappuccino',127], ['Espresso',89]], capacity: 65 },
+        { title: 'Vondelpark Ingang', location: 'Vondelpark 1, Amsterdam', question: 'Wat doe je liever in het park?', options: [['Hardlopen',203], ['Picknicken',156]], capacity: 92 },
+        { title: 'Dam Square', location: 'Dam, Amsterdam', question: 'Beste seizoen?', options: [['Zomer',341], ['Winter',178]], capacity: 45 },
+        { title: 'Museumplein', location: 'Museumplein, Amsterdam', question: 'Favoriete kunststroming?', options: [['Modern',89], ['Klassiek',134]], capacity: 30 },
+        { title: 'Leidseplein', location: 'Leidseplein, Amsterdam', question: 'Beste uitgaansavond?', options: [['Vrijdag',267], ['Zaterdag',312]], capacity: 98 },
+    ];
+
     return (
         <div className="min-h-screen bg-gray-50 text-gray-900">
             <header className="bg-white shadow-sm">
@@ -25,50 +44,8 @@ const OverzichtPage = () => {
                 </div>
             </header>
 
-            <main className="max-w-7xl mx-auto px-6 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <aside className="md:col-span-1">
-                        <div className="bg-white p-5 rounded-lg shadow-sm">
-                            <h2 className="text-lg font-semibold mb-3">Filters</h2>
-                            <div className="space-y-3">
-                                <label className="flex items-center gap-2">
-                                    <input type="checkbox" className="form-checkbox h-4 w-4 text-indigo-600" />
-                                    <span className="text-sm">Alle type</span>
-                                </label>
-                                <label className="flex items-center gap-2">
-                                    <input type="checkbox" className="form-checkbox h-4 w-4 text-indigo-600" />
-                                    <span className="text-sm">Binnen buurt</span>
-                                </label>
-                            </div>
-                        </div>
-                    </aside>
-
-                    <section className="md:col-span-2 space-y-6">
-                        <div className="bg-white p-6 rounded-lg shadow-sm">
-                            <h2 className="text-lg font-semibold mb-4">Top locaties</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <article className="p-4 border rounded-lg">
-                                    <h3 className="font-medium">Prullenbak Centrum</h3>
-                                    <p className="text-sm text-gray-500">Stemmen: 124 · Type: Restafval</p>
-                                </article>
-                                <article className="p-4 border rounded-lg">
-                                    <h3 className="font-medium">Afvalpunt Stationsplein</h3>
-                                    <p className="text-sm text-gray-500">Stemmen: 98 · Type: Glas</p>
-                                </article>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-lg shadow-sm">
-                            <h2 className="text-lg font-semibold mb-4">Buurt rankings</h2>
-                            <ol className="space-y-3 text-sm text-gray-700">
-                                <li className="p-3 bg-gray-50 rounded-md">1. Noordwijk — Score 92</li>
-                                <li className="p-3 bg-gray-50 rounded-md">2. Centrum — Score 87</li>
-                                <li className="p-3 bg-gray-50 rounded-md">3. Oost — Score 78</li>
-                            </ol>
-                        </div>
-                    </section>
-                </div>
-            </main>
+            {/* Render client-side overzicht (search/filter) */}
+            <OverzichtClient initialStats={stats} initialCards={cards} />
 
             <footer className="mt-8">
                 <div className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-gray-500">

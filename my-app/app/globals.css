@@ -3,7 +3,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #ffffff;
+  --foreground: #111827; /* dark text for light background */
   --font-roboto: 'Roboto', Arial, Helvetica, sans-serif;
   --font-sans: var(--font-roboto);
 }
@@ -17,8 +17,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #000000;
+    --background: #0f172a; /* slate-900 */
+    --foreground: #f8fafc; /* very light text */
   }
 }
 
