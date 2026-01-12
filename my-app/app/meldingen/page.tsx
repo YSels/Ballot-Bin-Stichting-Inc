@@ -4,7 +4,7 @@ import '../globals.css';
 const MeldingenPage = () => {
     return (
         <div className="min-h-screen bg-gray-50 text-gray-900">
-            <header className="bg-white shadow-sm">
+            <header className="bg-white shadow-sm border-b border-gray-200">
                 <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
                     <div>
                         <h1 className="text-2xl font-extrabold">Trash vote</h1>
@@ -20,14 +20,16 @@ const MeldingenPage = () => {
                     </nav>
                 </div>
             </header>
-            <main className="flex-grow bg-white p-8">
-                <section className="mb-8">
+            <main className="max-w-7xl mx-auto px-6 py-8">
+                <section className="mb-8 bg-white p-6 rounded-lg shadow-sm">
                     <h2 className="text-2xl font-semibold">Meldingen</h2>
                     <p>Hier zal een lijst van alle meldingen en rapportages worden getoond.</p>
                 </section>
             </main>
-            <footer className="bg-gray-800 p-4 text-white">
-                <p className="text-center">&copy; 2026 Ballot Bin Stichting. Alle rechten voorbehouden.</p>
+            <footer className="mt-8">
+                <div className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-gray-500">
+                    &copy; 2026 Ballot Bin Stichting. Alle rechten voorbehouden.
+                </div>
             </footer>
         </div>
     );
