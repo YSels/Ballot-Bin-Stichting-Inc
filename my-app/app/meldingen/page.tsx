@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import '../globals.css';
 
 const MeldingenPage = () => {
@@ -6,9 +7,12 @@ const MeldingenPage = () => {
         <div className="min-h-screen bg-gray-50 text-gray-900">
             <header className="bg-white shadow-sm">
                 <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-                    <div>
-                        <h1 className="text-2xl font-extrabold">Trash vote</h1>
-                        <p className="text-sm text-gray-500">Maakt afval weggooien leuk</p>
+                    <div className="flex items-center gap-3">
+                        <Image src="/logo.Bin.png" alt="Trash vote logo" width={40} height={40} />
+                        <div>
+                            <h1 className="text-2xl font-extrabold">Trash vote</h1>
+                            <p className="text-sm text-gray-500">Maakt afval weggooien leuk</p>
+                        </div>
                     </div>
                     <nav aria-label="primary" className="hidden sm:block">
                         <ul className="flex gap-6 text-sm">
@@ -19,14 +23,7 @@ const MeldingenPage = () => {
                         </ul>
                     </nav>
                 </div>
-                <nav>
-                    <ul className="flex justify-between space-x-8">
-                        <li><a className="hover:underline text-lg" href="/home">Home</a></li>
-                        <li><a className="hover:underline text-lg" href="/overzicht">Overzicht</a></li>
-                        <li><a className="hover:underline text-lg" href="/kaart">Kaart</a></li>
-                        <li><a className="hover:underline text-lg" href="/meldingen">Meldingen</a></li>
-                    </ul>
-                </nav>
+                
             </header>
             <main className="flex-grow bg-white p-8">
                 <section className="mb-8">
