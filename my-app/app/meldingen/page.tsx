@@ -19,14 +19,6 @@ const MeldingenPage = () => {
                         </ul>
                     </nav>
                 </div>
-                <nav>
-                    <ul className="flex justify-between space-x-8">
-                        <li><a className="hover:underline text-lg" href="/home">Home</a></li>
-                        <li><a className="hover:underline text-lg" href="/overzicht">Overzicht</a></li>
-                        <li><a className="hover:underline text-lg" href="/kaart">Kaart</a></li>
-                        <li><a className="hover:underline text-lg" href="/meldingen">Meldingen</a></li>
-                    </ul>
-                </nav>
             </header>
             <main className="flex-grow bg-white p-8">
                 <section className="mb-8">
