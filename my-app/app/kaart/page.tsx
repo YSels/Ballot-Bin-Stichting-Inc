@@ -1,7 +1,14 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import '../globals.css';
-import MapComponent from '../components/MapComponent';
+
+const MapComponent = dynamic(() => import('../components/MapComponent'), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gray-100 flex items-center justify-center">Kaart wordt geladen...</div>,
+});
 
 const KaartPage = () => {
   return (
