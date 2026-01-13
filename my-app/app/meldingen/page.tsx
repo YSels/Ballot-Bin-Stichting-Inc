@@ -25,7 +25,7 @@ const MeldingenPage = () => {
                 </div>
                 
             </header>
-            <main className="flex-grow bg-white p-8">
+            <main className="max-w-7xl mx-auto px-6 py-12">
                 <section className="mb-8">
                     <h2 className="text-2xl font-semibold">Meldingen</h2>
                     <p>Hier zal een lijst van alle meldingen en rapportages worden getoond.</p>
