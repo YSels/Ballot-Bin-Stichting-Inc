@@ -15,7 +15,7 @@ export default function OverzichtClient({ initialStats, initialCards }: { initia
   }, [query, initialCards]);
 
   return (
-    <main className="flex-grow bg-gray-50 p-8">
+    <main className="max-w-7xl mx-auto px-6 py-12">
       <section className="mb-6 grid grid-cols-1 sm:grid-cols-4 gap-4">
         {initialStats.map((s) => (
           <div key={s.title} className="bg-white p-4 rounded shadow">

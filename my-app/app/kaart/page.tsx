@@ -28,6 +28,7 @@ const KaartPage = () => {
               <li><a className="text-gray-600 hover:text-gray-900" href="/overzicht">Overzicht</a></li>
               <li><a className="text-indigo-600 font-medium" href="/kaart">Kaart</a></li>
               <li><a className="text-gray-600 hover:text-gray-900" href="/meldingen">Meldingen</a></li>
+              <li><a className="text-indigo-600 font-medium" href="/items">Ballot Bin toevoegen</a></li>
             </ul>
           </nav>
         </div>
