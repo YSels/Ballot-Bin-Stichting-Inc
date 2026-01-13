@@ -20,6 +20,7 @@ export default function HomePage() {
                             <li><a className="text-gray-600 hover:text-gray-900" href="/overzicht">Overzicht</a></li>
                             <li><a className="text-gray-600 hover:text-gray-900" href="/kaart">Kaart</a></li>
                             <li><a className="text-gray-600 hover:text-gray-900" href="/meldingen">Meldingen</a></li>
+                            <li><a className="text-indigo-600 font-medium" href="/items">Ballot Bin toevoegen</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -52,7 +53,7 @@ export default function HomePage() {
             </main>
 
             <footer className="mt-8">
-                <div className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-gray-500">
+                <div className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-gray-500"><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
                     &copy; 2026 Ballot Bin Stichting. Alle rechten voorbehouden.
                 </div>
             </footer>
