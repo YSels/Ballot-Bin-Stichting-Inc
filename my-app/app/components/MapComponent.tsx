@@ -42,6 +42,9 @@ export default function MapComponent() {
       .addTo(map.current)
       .bindPopup('Ballot Bin, Pyongyang');
 
+    L.marker([-8.52, 179.19], { icon: ballotBinIcon })
+      .addTo(map.current)
+      .bindPopup('Ballot Bin, Funafuti');
     // Cleanup
     return () => {
       if (map.current) {

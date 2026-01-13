@@ -47,15 +47,15 @@ const KaartPage = () => {
                 <ul className="mt-3 space-y-3">
                   <li className="p-3 bg-gray-50 rounded-md flex items-start justify-between">
                     <div>
-                      <div className="font-medium">Prullenbak A</div>
-                      <div className="text-xs text-gray-500">200m</div>
+                      <div className="font-medium">Amsterdam</div>
+                      <div className="text-xs text-gray-500">92,06km</div>
                     </div>
                     <button className="text-indigo-600 text-sm">Bekijk</button>
                   </li>
                   <li className="p-3 bg-gray-50 rounded-md flex items-start justify-between">
                     <div>
-                      <div className="font-medium">Afvalpunt B</div>
-                      <div className="text-xs text-gray-500">350m</div>
+                      <div className="font-medium">Rotterdam</div>
+                      <div className="text-xs text-gray-500">58,67km</div>
                     </div>
                     <button className="text-indigo-600 text-sm">Bekijk</button>
                   </li>
@@ -73,12 +73,12 @@ const KaartPage = () => {
               <h2 className="text-lg font-semibold mb-4">Meer locaties</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <article className="p-4 border rounded-lg">
-                  <h3 className="font-medium">Locatie X</h3>
-                  <p className="text-sm text-gray-500">Type: Restafval · Afstand: 120m</p>
+                  <h3 className="font-medium">Pyongyang</h3>
+                  <p className="text-sm text-gray-500">Type: Restafval · Afstand: 8.417,83km</p>
                 </article>
                 <article className="p-4 border rounded-lg">
-                  <h3 className="font-medium">Locatie Y</h3>
-                  <p className="text-sm text-gray-500">Type: Plastic · Afstand: 450m</p>
+                  <h3 className="font-medium">Funafuti</h3>
+                  <p className="text-sm text-gray-500">Type: Plastic · Afstand: 15.199,95km</p>
                 </article>
               </div>
             </div>
