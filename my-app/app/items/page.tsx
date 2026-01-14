@@ -34,7 +34,7 @@ export default async function ItemsOverzicht() {
             <div className="flex items-center gap-3">
               <Image src="/logo.Bin.png" alt="Trash vote logo" width={40} height={40} />
               <div>
-                <h1 className="text-2xl font-extrabold">Trash vote</h1>
+                <h1 className="text-2xl font-extrabold">Trash Vote</h1>
                 <p className="text-sm text-gray-500">Maakt afval weggooien leuk</p>
               </div>
             </div>

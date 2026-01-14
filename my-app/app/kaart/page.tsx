@@ -1,16 +1,20 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import '../globals.css';
+import KaartClient from './KaartClient';
 
-const MapComponent = dynamic(() => import('../components/MapComponent'), {
-  ssr: false,
-  loading: () => <div className="w-full h-full bg-gray-100 flex items-center justify-center">Kaart wordt geladen...</div>,
-});
+const KaartPage = async () => {
+  const apiUrl = process.env.BALLOT_API_URL || process.env.NEXT_PUBLIC_BALLOT_API_URL || process.env.NEXT_PUBLIC_API_URL || '';
+  let bins: any[] = [];
+  if (apiUrl) {
+    try {
+      const res = await fetch(apiUrl);
+      if (res.ok) bins = await res.json();
+    } catch (e) {
+      // ignore
+    }
+  }
 
-const KaartPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <header className="bg-white shadow-sm">
@@ -18,7 +22,7 @@ const KaartPage = () => {
           <div className="flex items-center gap-3">
             <Image src="/logo.Bin.png" alt="Trash vote logo" width={40} height={40} />
             <div>
-              <h1 className="text-2xl font-extrabold">Trash vote</h1>
+              <h1 className="text-2xl font-extrabold">Trash Vote</h1>
               <p className="text-sm text-gray-500">Maakt afval weggooien leuk</p>
             </div>
           </div>
@@ -34,58 +38,8 @@ const KaartPage = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <aside className="lg:col-span-1">
-            <div className="bg-white p-5 rounded-lg shadow-sm">
-              <h2 className="text-lg font-semibold mb-3">Balllot Bins:</h2>
-              <div className="space-y-3">
-                
-              </div>
-
-              <div className="mt-6">
-                <h3 className="text-sm text-gray-500"></h3>
-                <ul className="mt-3 space-y-3">
-                  <li className="p-3 bg-gray-50 rounded-md flex items-start justify-between">
-                    <div>
-                      <div className="font-medium">Amsterdam</div>
-                      <div className="text-xs text-gray-500">92,06km</div>
-                    </div>
-                    <button className="text-indigo-600 text-sm">Bekijk</button>
-                  </li>
-                  <li className="p-3 bg-gray-50 rounded-md flex items-start justify-between">
-                    <div>
-                      <div className="font-medium">Rotterdam</div>
-                      <div className="text-xs text-gray-500">58,67km</div>
-                    </div>
-                    <button className="text-indigo-600 text-sm">Bekijk</button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </aside>
-
-          <section className="lg:col-span-2 space-y-6">
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden h-[60vh]">
-              <MapComponent />
-            </div>
-
-            <div className="bg-white p-5 rounded-lg shadow-sm">
-              <h2 className="text-lg font-semibold mb-4">Meer locaties</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <article className="p-4 border rounded-lg">
-                  <h3 className="font-medium">Pyongyang</h3>
-                  <p className="text-sm text-gray-500">Type: Restafval · Afstand: 8.417,83km</p>
-                </article>
-                <article className="p-4 border rounded-lg">
-                  <h3 className="font-medium">Funafuti</h3>
-                  <p className="text-sm text-gray-500">Type: Plastic · Afstand: 15.199,95km</p>
-                </article>
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
+      {/* Client-side UI: list + map. KaartClient handles layout and interactions. */}
+      <KaartClient bins={bins} />
 
       <footer className="mt-8">
         <div className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-gray-500">

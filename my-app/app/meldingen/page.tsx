@@ -10,7 +10,7 @@ const MeldingenPage = () => {
                     <div className="flex items-center gap-3">
                         <Image src="/logo.Bin.png" alt="Trash vote logo" width={40} height={40} />
                         <div>
-                            <h1 className="text-2xl font-extrabold">Trash vote</h1>
+                            <h1 className="text-2xl font-extrabold">Trash Vote</h1>
                             <p className="text-sm text-gray-500">Maakt afval weggooien leuk</p>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ const MeldingenPage = () => {
             <main className="max-w-7xl mx-auto px-6 py-12">
                 <section className="mb-8">
                     <h2 className="text-2xl font-semibold">Meldingen</h2>
-                    <p>Hier zal een lijst van alle meldingen en rapportages worden getoond.</p>
+                    <p>Geen meldingen beschikbaar.</p>
                 </section>
             </main>
             <footer className="mt-8">
