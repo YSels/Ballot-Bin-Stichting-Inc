@@ -37,3 +37,12 @@ html, body {
 code, pre, kbd, samp {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace !important;
 }
+
+input,
+textarea,
+select {
+  color: #000000;
+  /* Forceert zwarte tekst */
+  background-color: #ffffff;
+  /* Zorg dat de achtergrond wit blijft */
+}
