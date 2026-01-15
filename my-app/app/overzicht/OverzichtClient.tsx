@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from "react";
 
 type Stat = { title: string; value: string; badge?: string };
-type Card = { title: string; location: string; question: string; options: [string, number][]; capacity: number };
+type Card = { title: string; location: string; question: string; options: [string, number][]; capacity: number; status?: string };
 
 export default function OverzichtClient({ initialStats, initialCards }: { initialStats: Stat[]; initialCards: Card[] }) {
   const [query, setQuery] = useState("");
@@ -40,6 +40,30 @@ export default function OverzichtClient({ initialStats, initialCards }: { initia
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {filtered.map((c) => {
           const totalVotes = c.options.reduce((a, b) => a + Number(b[1]), 0);
+          const st = String(c.status ?? '').toLowerCase();
+          let statusLabel = 'Status onbekend';
+          let statusClass = 'text-gray-600';
+          if (st) {
+            if (st.includes('oper') || st.includes('act')) {
+              statusLabel = 'Actief';
+              statusClass = 'text-green-600';
+            } else if (st.includes('vol') || st.includes('full')) {
+              statusLabel = 'Vol';
+              statusClass = 'text-orange-600';
+            } else if (st.includes('construct') || st.includes('bouw')) {
+              statusLabel = 'In constructie';
+              statusClass = 'text-yellow-600';
+            } else if (st.includes('buiten') || st.includes('niet')) {
+              statusLabel = 'Buiten Werking';
+              statusClass = 'text-red-600';
+            } else if (st.includes('defect') || st.includes('buiten') || st.includes('broken') || st.includes('niet')) {
+              statusLabel = 'Defect';
+              statusClass = 'text-red-600';
+            } else {
+              statusLabel = c.status ?? statusLabel;
+              statusClass = 'text-gray-600';
+            }
+          }
           return (
             <div key={c.title} className="bg-white rounded-lg p-6 shadow">
               <div className="flex justify-between items-start">
@@ -47,7 +71,7 @@ export default function OverzichtClient({ initialStats, initialCards }: { initia
                   <div className="font-semibold">{c.title}</div>
                   <div className="text-xs text-gray-500">{c.location}</div>
                 </div>
-                <div className="text-sm text-green-600 font-medium">Actief</div>
+                <div className={`text-sm font-medium ${statusClass}`}>{statusLabel}</div>
               </div>
 
               <div className="mt-4 text-sm text-gray-700">{c.question}</div>
