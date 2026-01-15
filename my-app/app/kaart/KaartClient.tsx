@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import MapComponent from '../components/MapComponent';
-import BinList from '../components/BinList';
+import { MapComponent, BinList } from '../components';
 
 export default function KaartClient({ bins }: { bins: any[] }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);

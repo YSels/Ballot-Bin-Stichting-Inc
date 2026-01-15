@@ -43,7 +43,7 @@ export default function HomePage() {
                         <div className="bg-white p-6 rounded-lg shadow-sm">
                             <h3 className="text-lg font-semibold mb-2">Snelle acties</h3>
                             <ul className="space-y-3 text-sm text-gray-700">
-                                <li><a href="/meldingen" className="text-indigo-600">Meld vuil</a></li>
+                                <li><a href="/meldingen" className="text-indigo-600">Meldingen vuil/Ballot Bins</a></li>
                                 <li><a href="/kaart" className="text-indigo-600">Zoek prullenbak</a></li>
                                 <li><a href="/overzicht" className="text-indigo-600">Buurtscore</a></li>
                             </ul>

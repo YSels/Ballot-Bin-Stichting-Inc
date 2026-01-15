@@ -8,10 +8,10 @@ type Card = { title: string; location: string; question: string; options: [strin
 
 const OverzichtPage = async () => {
     const fallbackStats: Stat[] = [
-        { title: 'Totaal Ballot Bins', value: '5' },
+        { title: 'Totaal Aantal Ballot Bins', value: '5' },
         { title: 'Actief', value: '3', badge: 'success' },
         { title: 'Vol - Aandacht Nodig', value: '2', badge: 'alert' },
-        { title: 'Totaal Stemmen', value: '1.896' },
+        { title: 'Totaal Aantal Stemmen', value: '1.896' },
     ];
 
     const fallbackCards: Card[] = [
@@ -45,7 +45,8 @@ const OverzichtPage = async () => {
                         const capaciteitRaw = Number(b.capaciteit ?? b.capacity ?? 0);
                         const capacityPct = capaciteitRaw > 0 ? Math.round((afvalteller / capaciteitRaw) * 100) : 0;
                         const options: [string, number][] = [[optionA, votesA], [optionB, votesB]];
-                        return { title, location, question, options, capacity: capacityPct } as Card;
+                        const status = String(b.prullenbak_status ?? b.status ?? '');
+                        return { title, location, question, options, capacity: capacityPct, status } as Card;
                     });
 
                     const total = cards.length;
@@ -68,10 +69,10 @@ const OverzichtPage = async () => {
                     const totalVotes = bins.reduce((sum: number, b: any) => sum + (Number(b.stemmen_voor ?? 0) + Number(b.stemmen_tegen ?? 0)), 0);
 
                     stats = [
-                        { title: 'Totaal Ballot Bins', value: String(total) },
+                        { title: 'Totaal Aantal Ballot Bins', value: String(total) },
                         { title: 'Actief', value: String(active), badge: 'success' },
                         { title: 'Vol - Aandacht Nodig', value: String(full), badge: 'alert' },
-                        { title: 'Totaal Stemmen', value: String(totalVotes) },
+                        { title: 'Totaal Aantal Stemmen', value: String(totalVotes) },
                     ];
                 }
             }
